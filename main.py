@@ -71,11 +71,11 @@ def main():
   print(f"u = 2/sqrt({(2*ab + bc).mag2}) * {median} = 1/sqrt({(2*ab + bc).mag2}) * {2*ab + bc} = {median.unit :.4f}")
 
   br(8)
-  dist = scalar_proj(oa, cross(ab, bc))
-  print(f"d = (OA \u22c5 (AB \u2a2f BC)) / |AB \u2a2f BC|")
-  print(f"  = [ {oa} \u22c5 ({ab} \u2a2f {bc}) ] / |{cross(ab, bc)}|")
-  print(f"  = [ {oa} \u22c5 {cross(ab, bc)} ] / sqrt({cross(ab, bc).mag2})")
-  print(f"d = {dot(oa, cross(ab, bc))}/sqrt({cross(ab, bc).mag2}) = {dist :.3f}")
+  dist = abs(scalar_proj(oa, cross(ab, bc)))
+  print(f"d = |OA \u22c5 (AB \u2a2f BC)| / |AB \u2a2f BC|")
+  print(f"  = | {oa} \u22c5 ({ab} \u2a2f {bc}) | / |{cross(ab, bc)}|")
+  print(f"  = | {oa} \u22c5 {cross(ab, bc)} | / sqrt({cross(ab, bc).mag2})")
+  print(f"d = {abs(dot(oa, cross(ab, bc)))}/sqrt({cross(ab, bc).mag2}) = {dist :.3f}")
 
   br(9)
   """
